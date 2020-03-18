@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      margin: 0;
+      font: 3rem sans-serif;
+    }
+    main {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #todayIs {
+      font-size: 1rem;
+    }
+  </style>
+  <head>
+    <title>what day is it</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <main>
+      <div id="day">ok</div>
+    </main>
+  </body>
+  <script>
+    window.onload = function() {
+      const now = new Date();
+      const dayIndex = now.getDay();
+      const weekdays = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ];
+      const day = weekdays[dayIndex];
+      const dayEl = document.getElementById("day");
+      dayEl.innerHTML = day;
+      document.title = day;
+    };
+  </script>
+</html>
